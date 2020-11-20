@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:11:40 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/19 21:38:05 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/20 09:10:19 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_print_flag(t_options options, va_list arg_list, int *size)
 {
 	if (!ft_is_type(options.type))
 		*size += ft_print_char(options, options.type);
-	else if (options.type == 's' && options.precision < 0 && options.preci_star == 0)
+	else if (options.type == 's'
+			&& options.precision < 0 && options.preci_star == 0)
 	{
 		options.len = options.precision * -1;
 		options.width_value = 0;

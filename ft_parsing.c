@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:09:43 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/19 19:10:44 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/21 12:07:47 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,8 @@ void		ft_get_options(char const *str, va_list arg_list,
 	char const *ptr;
 
 	ptr = str;
-	while (!ft_isalpha(*ptr) && *ptr != '%' && *ptr)
+	while ((ft_isdigit(*ptr) || *ptr == '*' ||
+				*ptr == '.' || *ptr == '-') && *ptr)
 	{
 		ptr = ft_is_flag(ptr, options);
 		if (*ptr == '.')

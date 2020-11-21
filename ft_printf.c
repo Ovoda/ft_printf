@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:11:40 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/20 09:10:19 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/21 12:04:25 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_print_flag(t_options options, va_list arg_list, int *size)
 	{
 		options.len = options.precision * -1;
 		options.width_value = 0;
+		if (options.zero > 0 && options.precision >= 0)
+			options.fill_char = '0';
 		*size += ft_convert_s(options, "");
 	}
 	else
@@ -37,7 +39,7 @@ int		ft_manager(char const *input, va_list arg_list)
 	size = 0;
 	while (input[i])
 	{
-		if (input[i] == '%' && input[i + 1])
+		if (input[i] == '%')
 		{
 			i++;
 			options = ft_init_option();

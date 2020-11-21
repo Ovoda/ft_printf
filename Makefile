@@ -36,13 +36,16 @@ $(OBJS_PATH)%.o : %.c
 	@$(CC) -I ft_printf.h -c $< -o $@
 
 clean:
+	@make clean -C $(LBPATH)
 	@$(RM) $(OBJS)
 	@make fclean -C $(LBPATH)
 	@rmdir $(OBJS_PATH) 2> /dev/null || true
 
 fclean: clean
 	@$(RM) $(NAME)
+	@make fclean -C $(LBPATH)
 
 re: fclean all
+	@make re -C $(LBPATH)
 
 .PHONY: all, clean, fclean, re

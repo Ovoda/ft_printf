@@ -6,7 +6,7 @@
 /*   By: calide-n <calide-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 16:11:10 by calide-n          #+#    #+#             */
-/*   Updated: 2020/11/19 21:12:03 by calide-n         ###   ########.fr       */
+/*   Updated: 2020/11/21 11:08:49 by calide-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_print_char(t_options option, int c)
 
 	size = 1;
 	fill = ' ';
-	if (c == '%' && option.zero == 1 && option.minus == 0)
+	if (option.zero > 0 && option.minus == 0)
 		fill = '0';
 	if (option.minus == 0)
 		while (option.width_value - 1 > 0)
